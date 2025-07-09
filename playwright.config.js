@@ -1,21 +1,7 @@
-// @ts-check
-import { defineConfig, devices } from "@playwright/test";
-
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
-
-/**
- * @see https://playwright.dev/docs/test-configuration
- *
- */
+import { defineConfig } from "@playwright/test";
 
 const reportConfig = {
-  open: process.env.CI ? "never" : "always",
+  // open: process.env.CI ? "never" : "always",
   folderPath: "Test Report",
   filename: "index.html",
   title: "Ortoni Test Report",
