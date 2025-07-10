@@ -11,5 +11,8 @@
     "@playwright/test": "^1.53.2",
     "@types/node": "^24.0.12",
     "ortoni-report": "^3.0.2"
+  },
+  "dependencies": {
+    "aiotests-playwright-reporter": "^1.0.1"
   }
 }
