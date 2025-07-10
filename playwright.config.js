@@ -1,6 +1,5 @@
 import { defineConfig } from "@playwright/test";
 
-<<<<<<< HEAD
 const aioConfigDetails = {
   enableReporting: true,
   jiraProjectId: "CCS",
@@ -19,7 +18,7 @@ const aioConfigDetails = {
 
   addAttachmentToFailedCases: true,
 };
-=======
+
 // const reportConfig = {
 //   // open: process.env.CI ? "never" : "always",
 //   folderPath: "Test Report",
@@ -28,7 +27,6 @@ const aioConfigDetails = {
 //   projectName: "Playwright-AIOTests",
 //   preferredTheme: "dark",
 // };
->>>>>>> parent of b4ee436 (refactor: update package.json and package-lock.json to include aiotests-playwright-reporter dependency; enhance playwright.config.js with aioConfigDetails; modify auth.setup.js to include test case identifier)
 
 export default defineConfig({
   timeout: 100_000,
@@ -47,7 +45,8 @@ export default defineConfig({
   // reporter: [["ortoni-report", reportConfig]],
   reporter: [
     ["html", { open: "never" }], // HTML reporter
-    ["list"], // List reporter for console output
+    ["list"],
+    ["aiotests-playwright-reporter", { aioConfig: aioConfigDetails }], // List reporter for console output
   ],
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
