@@ -11,7 +11,7 @@ const aioConfigDetails = {
     pat: process.env.JIRA_PAT,
   },
   cycleDetails: {
-    createNewCycle: "false", // ✅ Set to true if you want to create a new cycle
+    createNewCycle: "true", // ✅ Set to true if you want to create a new cycle
     cycleName: "CCS Test Cycle 2", // ✅ Replace with your actual AIO Test Cycle Name
     cycleKey: "CCS-CY-2", // ✅ Replace with your actual AIO Test Cycle Key
   },
