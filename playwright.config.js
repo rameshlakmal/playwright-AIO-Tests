@@ -1,13 +1,13 @@
 import { defineConfig } from "@playwright/test";
 
-const reportConfig = {
-  // open: process.env.CI ? "never" : "always",
-  folderPath: "Test Report",
-  filename: "index.html",
-  title: "Ortoni Test Report",
-  projectName: "Playwright-AIOTests",
-  preferredTheme: "dark",
-};
+// const reportConfig = {
+//   // open: process.env.CI ? "never" : "always",
+//   folderPath: "Test Report",
+//   filename: "index.html",
+//   title: "Ortoni Test Report",
+//   projectName: "Playwright-AIOTests",
+//   preferredTheme: "dark",
+// };
 
 export default defineConfig({
   timeout: 100_000,
@@ -23,7 +23,12 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
-  reporter: [["ortoni-report", reportConfig]],
+  // reporter: [["ortoni-report", reportConfig]],
+  reporter: [
+    ["html", { open: "never" }], // HTML reporter
+    ["list"], // List reporter for console output
+  ],
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
