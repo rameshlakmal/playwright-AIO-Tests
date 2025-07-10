@@ -11,7 +11,7 @@ const aioConfigDetails = {
     pat: process.env.JIRA_PAT,
   },
   cycleDetails: {
-    createNewCycle: "true", // ✅ Set to true if you want to create a new cycle
+    createNewCycle: "false", // ✅ Set to true if you want to create a new cycle
     cycleName: "CCS Test Cycle 2", // ✅ Replace with your actual AIO Test Cycle Name
     cycleKey: "CCS-CY-2", // ✅ Replace with your actual AIO Test Cycle Key
   },
@@ -55,7 +55,7 @@ export default defineConfig({
     baseURL: "https://www.saucedemo.com",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: "retain-on-failure",
     headless: !!process.env.CI,
     screenshot: "only-on-failure",
     video: "retain-on-failure",

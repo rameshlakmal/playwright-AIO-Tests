@@ -32,5 +32,5 @@ jobs:
         uses: actions/upload-artifact@v4
         id: artifact-upload-step
         with:
-          name: allure-results
+          name: test-result artifacts
           path: test-results
