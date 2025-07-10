@@ -1,5 +1,25 @@
 import { defineConfig } from "@playwright/test";
 
+<<<<<<< HEAD
+const aioConfigDetails = {
+  enableReporting: true,
+  jiraProjectId: "CCS",
+  cloud: {
+    apiKey: process.env.AIO_API_KEY,
+  },
+  server: {
+    jiraServerUrl: "https://rameshslakmal1999.atlassian.net/", // optional if using cloud
+    pat: process.env.JIRA_PAT,
+  },
+  cycleDetails: {
+    createNewCycle: "false", // ✅ Set to true if you want to create a new cycle
+    cycleName: "CCS Test Cycle 2", // ✅ Replace with your actual AIO Test Cycle Name
+    cycleKey: "CCS-CY-2", // ✅ Replace with your actual AIO Test Cycle Key
+  },
+
+  addAttachmentToFailedCases: true,
+};
+=======
 // const reportConfig = {
 //   // open: process.env.CI ? "never" : "always",
 //   folderPath: "Test Report",
@@ -8,6 +28,7 @@ import { defineConfig } from "@playwright/test";
 //   projectName: "Playwright-AIOTests",
 //   preferredTheme: "dark",
 // };
+>>>>>>> parent of b4ee436 (refactor: update package.json and package-lock.json to include aiotests-playwright-reporter dependency; enhance playwright.config.js with aioConfigDetails; modify auth.setup.js to include test case identifier)
 
 export default defineConfig({
   timeout: 100_000,

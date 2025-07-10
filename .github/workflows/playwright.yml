@@ -6,6 +6,11 @@ on:
 
   pull_request:
     branches: [main, master]
+
+env:
+  AIO_API_KEY: ${{ secrets.AIO_API_KEY }}
+  JIRA_PAT: ${{ secrets.JIRA_PAT }}
+
 jobs:
   test:
     timeout-minutes: 60
