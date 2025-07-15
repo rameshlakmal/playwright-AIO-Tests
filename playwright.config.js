@@ -11,13 +11,13 @@ const aioConfigDetails = {
     pat: process.env.JIRA_PAT, // ✅ Personal Access Token for Jira Server, pulled from environment variable
   },
   cycleDetails: {
-    createNewCycle: "true", // ✅ Options: [true, false, "CREATE_IF_ABSENT"]
+    createNewCycle: "false", // ✅ Options: [true, false, "CREATE_IF_ABSENT"]
     // Set to true to always create a new test cycle for this run
 
     cycleName: "PAT-Test-Cycle-1", // ✅ Used when createNewCycle is true
     // Sets the name for the new test cycle being created
 
-    cycleKey: "CCS-CY-2", // ✅ Used when createNewCycle is false
+    cycleKey: "PAT-CY-1", // ✅ Used when createNewCycle is false
     // Links the run to an existing cycle by its key
   },
 

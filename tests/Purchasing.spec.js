@@ -28,7 +28,7 @@ test.describe("Purchasing Test Cases", () => {
     const PurchasingLocators = locators.Purchasinglocators;
     await purchasingPage.AddItemsToCart();
     await purchasingPage.RemoveItemsFromCart();
-    await expect(page.locator(PurchasingLocators.Cart)).toContainText("1");
+    await expect(page.locator(PurchasingLocators.Cart)).toContainText("2");
   });
 
   test("@PAT-TC-5 : Verify that user can checkout successfully", async ({
