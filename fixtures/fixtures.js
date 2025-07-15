@@ -1,6 +1,6 @@
 import { test as base } from "@playwright/test";
 import LoginPage from "../pages/LoginPage.js";
-import PurchasingPage from "../pages/Purchasingpage.js";
+import PurchasingPage from "../pages/PurchasingPage.js";
 import { LocatorManager } from "../locators/Locatormanager.js";
 
 export const test = base.extend({
