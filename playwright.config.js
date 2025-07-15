@@ -14,7 +14,7 @@ const aioConfigDetails = {
     createNewCycle: "true", // ✅ Options: [true, false, "CREATE_IF_ABSENT"]
     // Set to true to always create a new test cycle for this run
 
-    cycleName: "PAT Test Cycle 1", // ✅ Used when createNewCycle is true
+    cycleName: "PAT-Test-Cycle-1", // ✅ Used when createNewCycle is true
     // Sets the name for the new test cycle being created
 
     cycleKey: "CCS-CY-2", // ✅ Used when createNewCycle is false
