@@ -10,7 +10,7 @@ test.describe("Purchasing Test Cases", () => {
       zipcode: faker.location.zipCode(),
     };
   });
-  test("@CCS-TC-1: Verify that user can add items to the cart", async ({
+  test("@PAT-TC-3: Verify that user can add items to the cart", async ({
     page,
     purchasingPage,
     locators,
@@ -20,7 +20,7 @@ test.describe("Purchasing Test Cases", () => {
     await expect(page.locator(PurchasingLocators.Cart)).toContainText("2");
   });
 
-  test("@CCS-TC-1: Verify that user can remove items from the cart", async ({
+  test("@PAT-TC-4: Verify that user can remove items from the cart", async ({
     page,
     purchasingPage,
     locators,
@@ -31,7 +31,7 @@ test.describe("Purchasing Test Cases", () => {
     await expect(page.locator(PurchasingLocators.Cart)).toContainText("1");
   });
 
-  test("@CCS-TC-1: Verify that user can checkout successfully", async ({
+  test("@PAT-TC-5: Verify that user can checkout successfully", async ({
     page,
     purchasingPage,
     locators,

@@ -1,22 +1,27 @@
 import { defineConfig } from "@playwright/test";
 
 const aioConfigDetails = {
-  enableReporting: true,
-  jiraProjectId: "CCS",
+  enableReporting: true, // ✅ Set to true to report test results to AIO Tests (default is false)
+  jiraProjectId: "PAT", // ✅ Jira project key where the AIO test cases are managed
   cloud: {
-    apiKey: process.env.AIO_API_KEY,
+    apiKey: process.env.AIO_API_KEY, // ✅ API key for AIO Cloud, stored securely as an environment variable
   },
   server: {
-    jiraServerUrl: "https://rameshslakmal1999.atlassian.net/", // optional if using cloud
-    pat: process.env.JIRA_PAT,
+    jiraServerUrl: "https://rameshslakmal1999.atlassian.net/", // ✅ Jira base URL (used only for Jira Server setup)
+    pat: process.env.JIRA_PAT, // ✅ Personal Access Token for Jira Server, pulled from environment variable
   },
   cycleDetails: {
-    createNewCycle: "false", // ✅ Set to true if you want to create a new cycle
-    cycleName: "CCS Test Cycle 2", // ✅ Replace with your actual AIO Test Cycle Name
-    cycleKey: "CCS-CY-2", // ✅ Replace with your actual AIO Test Cycle Key
+    createNewCycle: "true", // ✅ Options: [true, false, "CREATE_IF_ABSENT"]
+    // Set to true to always create a new test cycle for this run
+
+    cycleName: "PAT Test Cycle 1", // ✅ Used when createNewCycle is true
+    // Sets the name for the new test cycle being created
+
+    cycleKey: "CCS-CY-2", // ✅ Used when createNewCycle is false
+    // Links the run to an existing cycle by its key
   },
 
-  addAttachmentToFailedCases: true,
+  addAttachmentToFailedCases: true, // ✅ Adds only screenshots to failed test cases if available
 };
 
 export default defineConfig({
@@ -30,7 +35,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 1 : 1,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
   // reporter: [["ortoni-report", reportConfig]],
