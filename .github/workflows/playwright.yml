@@ -1,11 +1,6 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [main, master]
   workflow_dispatch:
-
-  pull_request:
-    branches: [main, master]
 
 env:
   AIO_API_KEY: ${{ secrets.AIO_API_KEY }}
