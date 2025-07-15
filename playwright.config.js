@@ -19,15 +19,6 @@ const aioConfigDetails = {
   addAttachmentToFailedCases: true,
 };
 
-// const reportConfig = {
-//   // open: process.env.CI ? "never" : "always",
-//   folderPath: "Test Report",
-//   filename: "index.html",
-//   title: "Ortoni Test Report",
-//   projectName: "Playwright-AIOTests",
-//   preferredTheme: "dark",
-// };
-
 export default defineConfig({
   timeout: 100_000,
 

@@ -4,12 +4,12 @@ import Logger from "../utils/Logger.js"; // Import the Logger
 export default class LoginPage {
   constructor(page) {
     this.page = page;
-    this.locators = LocatorManager.LoginLocators;
+    this.locators = LocatorManager.Login;
   }
 
   async login(username, password) {
     Logger.info(`Attempting to login user: ${username}`); // Log an info message
-    await this.page.goto("v1"); // Navigation can stay here, or be part of try-catch
+    await this.page.goto("/"); // Navigation can stay here, or be part of try-catch
     try {
       await this.page.locator(this.locators.usernameInput).fill(username);
       await this.page.locator(this.locators.passwordInput).fill(password);
@@ -21,6 +21,4 @@ export default class LoginPage {
       throw error;
     }
   }
-
-  
 }

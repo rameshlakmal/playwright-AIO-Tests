@@ -1,8 +1,8 @@
 import { test as setup, expect } from "../fixtures/fixtures.js";
 import { Login } from "../test-data/test-data.json";
 
-setup("@CCS-TC-2: User login", async ({ loginTest, page }) => {
+setup("User login", async ({ loginTest, page }) => {
   await loginTest.login(Login.username, Login.password);
-  await expect(page).toHaveURL("https://www.saucedemo.com/v1/inventory.html");
+  await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
   await page.context().storageState({ path: "./.auth/user.json" });
 });
